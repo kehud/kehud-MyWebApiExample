@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace MyWebApiExample
@@ -11,6 +12,10 @@ namespace MyWebApiExample
         {
             // Web API configuration and services
             config.EnableCors();
+
+            //Formatters
+            config.Formatters.Add(new JsonMediaTypeFormatter());
+            config.Formatters.Add(new XmlMediaTypeFormatter());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
